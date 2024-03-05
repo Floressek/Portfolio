@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.roundedImage {
+    border-radius: 50%; /* This will create a circular image. Adjust as needed for different shapes */
+}
