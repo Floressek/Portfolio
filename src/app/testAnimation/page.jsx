@@ -143,6 +143,7 @@
 // //
 "use client"
 import {useRef, useEffect, useState} from 'react';
+import {motion} from "framer-motion";
 import {gsap} from 'gsap';
 
 const TestPage = () => {
@@ -153,7 +154,7 @@ const TestPage = () => {
     useEffect(() => {
         const startAnimations = () => {
             // Animate the block
-             const blockTimeline = gsap.timeline({
+            const blockTimeline = gsap.timeline({
                 paused: true, // Start paused to allow the trail to catch up
             });
 
@@ -207,10 +208,17 @@ const TestPage = () => {
     }, []);
 
     return (
-        <div className="h-full flex items-center justify-center">
-            <div ref={boxRef} className="w-96 h-96 bg-black rounded"></div>
-            <div ref={trailRef} className="w-96 h-96 bg-gradient-to-r from-transparent to-black rounded absolute"></div>
-        </div>
+        <motion.div
+            className="h-full"
+            initial={{y: "-200vh"}}
+            animate={{y: "0%"}}
+            transition={{duration: 1}}>
+            <div className="h-full flex items-center justify-center">
+                <div ref={boxRef} className="w-96 h-96 bg-black rounded"></div>
+                <div ref={trailRef}
+                     className="w-96 h-96 bg-gradient-to-r from-transparent to-black rounded absolute"></div>
+            </div>
+        </motion.div>
     );
 };
 

@@ -12,6 +12,7 @@ const links = [
     {href: "/about", label: "About"},
     {href: "/portfolio", label: "Portfolio"},
     {href: "/contact", label: "Contact"},
+    {href: "/testAnimation", label: "A"},
 ];
 
 const Navbar = () => {
@@ -44,6 +45,34 @@ const Navbar = () => {
         opened: {
             rotate: -45,
             backgroundColor: "rgb(255, 255, 255)",
+        }
+    }
+
+    const listVariance = {
+        closed: {
+            x: "100vw",
+        },
+        opened: {
+            x: 0,
+            // TRANSITION
+            transition: {
+                when: "beforeChildren",
+                staggerChildren: 0.13,
+                type: "spring",
+                stiffness: 150,
+                damping: 20,
+            }
+        }
+    }
+
+    const listItemVariance = {
+        closed: {
+            x: -10,
+            opacity: 0,
+        },
+        opened: {
+            x: 0,
+            opacity: 1,
         }
     }
 
@@ -101,14 +130,20 @@ const Navbar = () => {
                 </button>
                 {/*MENU LIST*/}
                 {open && (
-                    <div
-                        className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl font-semibold">
+                    <motion.div
+                        variants={listVariance}
+                        initial="closed"
+                        animate="opened"
+                        className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl font-semibold z-40"> {/*z-40 to make sure it's on top of everything*/}
                         {links.map((link) => (
-                            <Link href={link.href} key={link.label}>
-                                {link.label}
-                            </Link>
+
+                            <motion.div className="" key={link.label} variants={listItemVariance}>
+                                <Link href={link.href}>
+                                    {link.label}
+                                </Link>
+                            </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                 )}
             </div>
         </div>
