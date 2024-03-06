@@ -110,6 +110,9 @@ const Navbar = () => {
                 <Link href="https://www.linkedin.com/in/szymon-florek-33a968296/">
                     <Image src="/linkedin.png" alt="" width={24} height={24}/>
                 </Link>
+                <Link href="#">
+                    <Image src="/pinterest.png" alt="" width={24} height={24}/>
+                </Link>
             </div>
             {/* RESPONSIVE MENU */}
             <div className='md:hidden'>

@@ -15,22 +15,20 @@ const Homepage = () => {
                 {/*TODO: Add a rounded image of a programmer*/}
                 <div
                     className={`${styles.roundedImage} h-1/2 rounded-lg lg:h-full lg:w-1/2 lg:mr-8 relative overflow-hidden`}>
-                    <Image src="/programmer.png" priority={true} alt="/programmer-fin.png" fill className='object-contain roundedImage'
-                           // objectFit="contain"
+                    <Image src="/programmer.png" priority={true} alt="/programmer-fin.png" fill
+                           className='object-contain roundedImage'
+                        // objectFit="contain"
                     />
                 </div>
                 {/*TEXT CONTAINER*/}
                 <div className='h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-8 text-center items-center justify-center'>
                     {/*TITLE*/}
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold">
-                        Cooking Meth,
-                        Cooking
-                        Meth, Cooking Meth</h1>
+                        Digital Craftsmanship: A Journey Through Design & Development</h1>
                     {/*DESCRIPTION*/}
-                    <p className="md:text-2xl">Welcome to my humble guide on how to
-                        get rich fast by making methamphetamine :).
-                        Welcome to my humble guide on how to
-                        get rich fast by making methamphetamine :)</p>
+                    <p className="md:text-2xl">Welcome to Digital Craftsmanship: A Journey Through Design &
+                        Development, a curated showcase of my multidisciplinary approach to digital creation. This
+                        portfolio represents a careful selection of projects that not only demonstrate my skills :)</p>
 
                     {/*BUTTONS*/}
                     <div className='flex gap-4'>
